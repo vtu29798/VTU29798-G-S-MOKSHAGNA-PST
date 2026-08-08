@@ -18,11 +18,11 @@ public class Solution {
 
             int value = sc.nextInt();
 
-            // Add new value to the back
+        
             deque.addLast(value);
             frequency.put(value, frequency.getOrDefault(value, 0) + 1);
 
-            // Keep window size equal to k
+            
             if (deque.size() > k) {
                 int removed = deque.removeFirst();
 
@@ -36,7 +36,6 @@ public class Solution {
                 }
             }
 
-            // Number of unique values in current window
             if (deque.size() == k) {
                 maxUnique = Math.max(maxUnique, frequency.size());
             }
